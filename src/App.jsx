@@ -71,10 +71,10 @@ function App() {
         Undoable Counter{" "}
       </h1>
 
-      <div className="action-btn mx-auto my-6 w-fit flex space-x-20 border border-black">
+      <div className="action-btn mx-auto my-6 w-fit flex space-x-20">
         <button
           onClick={() => handleUndo()}
-          className="bg-purple-800 text-4xl cursor-pointer border border-black"
+          className="bg-purple-800 text-4xl cursor-pointer"
         >
           Undo
         </button>
@@ -93,7 +93,7 @@ function App() {
         </button>
       </div>
 
-      <div className="user-action flex space-x-8 mx-auto w-fit border border-black">
+      <div className="user-action flex space-x-8 mx-auto w-fit">
         {[-100, -10, -1].map((btn, idx) => (
           <button
             key={idx}
