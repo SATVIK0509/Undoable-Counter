@@ -66,7 +66,7 @@ function App() {
 
   return (
     <div className="App flex flex-col">
-      <h1 className="mx-auto w-fit text-6xl border border-black">
+      <h1 className="mx-auto w-fit text-6xl">
         {" "}
         Undoable Counter{" "}
       </h1>
