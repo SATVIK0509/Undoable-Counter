@@ -18,11 +18,16 @@ function App() {
 
     const copyHistory = [...history];
     const removed = copyHistory.shift();
+    let newVal =  0;
+    if(copyHistory.length >0 ){
+      newVal = copyHistory[0].curr
+    } 
     const copyRedoArr = [...redoArr];
     copyRedoArr.push(removed);
 
     setHistory(copyHistory);
     setRedoArr(copyRedoArr);
+    setCounter(newVal)
   };
 
   const handleRedo = () => {
@@ -35,8 +40,11 @@ function App() {
     const removed = copyRedoArr.pop();
     copyHistory.unshift(removed);
 
+    const newVal = removed.curr;
+    
     setRedoArr(copyRedoArr);
     setHistory(copyHistory);
+    setCounter(newVal);
   };
 
   const maintainHistory = (action, prev, curr) => {
