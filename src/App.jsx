@@ -129,15 +129,20 @@ function App() {
 
       <div className=" mx-auto bg-white p-4 rounded shadow max-h-96 overflow-y-auto w-64 mt-6">
         <h1 className="text-center font-semibold text-gray-700 mb-2">HISTORY</h1>
-        <div className="text-center"> {"Action "} : {"Prev"} : {"Curr"} </div>
+        <div className="text-center flex justify-around"> 
+          <div> {"Action "} :  </div>
+          <div> {"Prev ->"}  {"Curr"}  </div>
+        
+        </div>
         {history.map((item, idx) => {
           return (
             <div
               key={idx}
-              className="bg-green-200 p-2 mb-1 rounded text-sm text-center"
+              className="flex justify-around space-x-4 bg-green-200 p-2 mb-1 rounded text-sm text-center"
             >
               
-              {item.action } : {item.prev } : {item.curr }{" "}
+              <div> {item.action } </div>
+              <div> [ {item.prev } {"->"} {item.curr } ]</div>
             </div>
           );
         })}
