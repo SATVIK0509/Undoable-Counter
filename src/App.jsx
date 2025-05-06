@@ -65,8 +65,8 @@ function App() {
   };
 
   return (
-    <div className="App flex flex-col">
-      <h1 className="mx-auto w-fit text-6xl">
+    <div className="App flex flex-col min-h-screen bg-gray-100 p-6 ">
+      <h1 className="mx-auto w-fit text-4xl font-bold text-gray-900 mb-6">
         {" "}
         Undoable Counter{" "}
       </h1>
@@ -74,20 +74,20 @@ function App() {
       <div className="action-btn mx-auto my-6 w-fit flex space-x-20">
         <button
           onClick={() => handleUndo()}
-          className="bg-purple-800 text-4xl cursor-pointer"
+          className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 cursor-pointer"
         >
           Undo
         </button>
 
         <button
           onClick={() => handleReset()}
-          className="bg-pink-400 text-4xl cursor-pointer border border-black"
+          className="bg-rose-500 text-white px-4 py-2 rounded hover:bg-rose-600 cursor-pointer"
         >
           Reset
         </button>
         <button
           onClick={() => handleRedo()}
-          className="bg-purple-800 text-4xl cursor-pointer border border-black"
+          className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 cursor-pointer"
         >
           Redo
         </button>
@@ -98,13 +98,13 @@ function App() {
           <button
             key={idx}
             onClick={() => handleCounter(btn)}
-            className="bg-red-600 text-4xl cursor-pointer p-2"
+            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 cursor-pointer"
           >
             {btn}
           </button>
         ))}
 
-        <div className="bg-orange-400 border border-black py-2 px-8 text-4xl">
+        <div className="text-3xl font-bold bg-amber-400 text-black px-6 py-3 rounded">
           {counter}
         </div>
 
@@ -112,20 +112,20 @@ function App() {
           <button
             key={idx}
             onClick={() => handleCounter(btn)}
-            className="bg-red-600 text-4xl cursor-pointer p-2"
+            className="bg-emerald-500 text-white px-4 py-2 rounded hover:bg-emerald-600 cursor-pointer"
           >
             {btn}
           </button>
         ))}
       </div>
 
-      <div className="history h-[400px] mx-auto my-8 w-[300px] overflow-y-scroll border border-black">
-        <h1 className="text-center font-bold">HISTORY</h1>
+      <div className=" mx-auto bg-white p-4 rounded shadow max-h-96 overflow-y-auto w-64 mt-6">
+        <h1 className="text-center font-semibold text-gray-700 mb-2">HISTORY</h1>
         {history.map((item, idx) => {
           return (
             <div
               key={idx}
-              className="text-center border border-black my-2 bg-green-300"
+              className="bg-green-200 p-2 mb-1 rounded text-sm text-center"
             >
               {" "}
               {item.action} : {item.prev} : {item.curr}{" "}
